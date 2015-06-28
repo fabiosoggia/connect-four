@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="ConnectFourApp">
+<head>
+	<meta charset="utf-8">
+	<title>Connect Four (AngularJS Version)</title>
+
+	<!-- Icons -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
+	<!-- Libs -->
+	<script src="js/lib/angular/angular.min.js"></script>
+
+	<!-- MyApp -->
+	<script src="js/connect-four-app.js"></script>
+	<script src="js/controllers/game-controller.js"></script>
+	<script src="js/controllers/player-controller.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+	<!-- <div ng-view></div> -->
+	<h1>Connect Four</h1>
+	<p>Connect Four is a game in which two players take turns dropping red or yellow coloured discs into a vertically suspended 7 x 6 grid. Discs fall to the bottom of the grid, occupying the next available space. A player wins by connecting four of their discs horizontally, vertically or diagonally.</p>
+
+	<div ng-controller="GameController" class="game-field">
+		<h2>Play...</h2>
+		<p class="status-bar">It is your turn: {{ game.getCurrentPlayer().name }}!</p>
+		<a ng-click="game.undo()" class="icon fa-undo undo-button">Undo</a>
+		<div class="board">
+			<div style="width:{{ 100/game.board.columnsCount }}%;" ng-repeat="col in game.board.columns" ng-click="makeMove($index)" class="column">
+				<div style="background:{{ game.players[coin].color }};" ng-repeat="coin in col track by $index" class="coin">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div ng-controller="PlaythroughPlayerController" class="game-player">
+		<h1>...or replay!</h1>
+		<p>Here you can replay your last playthrough.</p>
+		<div class="board">
+			<div style="width:{{ (100/game.board.columnsCount) }}%;" ng-repeat="col in game.board.columns" class="column">
+				<div style="background:{{ game.players[coin].color }};" ng-repeat="coin in col track by $index" class="coin">
+				</div>
+			</div>
+		</div>
+		<ul class="playlist">
+			<li ng-repeat="video in playthroughs track by $index" ng-click="play($index)">
+				<a class="icon fa-play">{{ video.date | date : 'yyyy-MM-dd HH:mm:ss'}}</a>
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>

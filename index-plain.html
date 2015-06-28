@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Connect Four (AngularJS Version)</title>
+
+	<!-- Icons -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+	<h1>Connect Four</h1>
+	<p>Connect Four is a game in which two players take turns dropping red or yellow coloured discs into a vertically suspended 7 x 6 grid. Discs fall to the bottom of the grid, occupying the next available space. A player wins by connecting four of their discs horizontally, vertically or diagonally.</p>
+
+	<div class="game-wrapper">
+		<h2>Play...</h2>
+		<a id="undo" class="icon fa-undo undo-button">Undo</a>
+		<div id="game" class="board"></div>
+	</div>
+
+	<!-- Libs -->
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+	<!-- MyApp -->
+	<script src="js/connect-four-app.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

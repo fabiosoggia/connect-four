@@ -1,0 +1,17 @@
+# Laravel
+/bootstrap/compiled.php
+/vendor
+
+# Composer
+composer.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vagrant
+vagrant
+.vagrant
+
+# Node
+/node_modules

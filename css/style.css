@@ -35,16 +35,16 @@ p {
 
 .undo-button {
 	display: block;
-	line-height: 60px;
+	line-height: 40px;
 	background-color: #538AD5;
 	text-align: center;
 	cursor: pointer;
 
 	position: absolute;
 	z-index: 1;
-	bottom: -4%;
-	right: 8%;
-	padding: 0 2em;
+	bottom: -30px;
+	right: 10px;
+	padding: 0 1em;
 }
 
 .icon:before {

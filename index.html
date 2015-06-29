@@ -34,7 +34,7 @@
 		<p class="status-bar">It is your turn: {{ game.getCurrentPlayer().name }}!</p>
 		<a ng-click="game.undo()" class="icon fa-undo undo-button">Undo</a>
 		<div class="board">
-			<div style="width:{{ 100/game.board.columnsCount }}%;" ng-repeat="col in game.board.columns" ng-click="makeMove($index)" class="column">
+			<div ng-repeat="col in game.board.columns" ng-click="makeMove($index)" class="column">
 				<div style="background:{{ game.players[coin].color }};" ng-repeat="coin in col track by $index" class="coin">
 				</div>
 			</div>

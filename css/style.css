@@ -31,6 +31,8 @@ p {
 	padding-bottom: 100%;
 	overflow: hidden;
 	background-color: #f9f9f9;
+	display: flex;
+	align-items: stretch;
 }
 
 .undo-button {
@@ -67,6 +69,10 @@ p {
     -webkit-transform: rotate(-180deg);
     -moz-transform: rotate(-180deg);
     transform: rotate(-180deg);
+    /* Or use flex-direction? */
+
+    flex-grow: 1;
+
 }
 
 .column:nth-child(odd) {

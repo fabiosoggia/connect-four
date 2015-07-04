@@ -168,16 +168,15 @@ p {
 
 .turn {
 	width: 150px;
-	height: 150px;
 	padding: 8px;
 	background-color: #EFF44C;
 	text-shadow: 0 1px 3px #000, 0 0 3px #000;
 	text-align: center;
 	color: #fff;
-	border-radius: 50%;
+	border-radius: 5%;
 	position: absolute;
 	margin: 0;
-	top: 0;
+	top: 5%;
 	right: 5%;
 	display: -ms-flexbox;
 	-ms-flex-pack: center;

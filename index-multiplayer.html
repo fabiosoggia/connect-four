@@ -10,6 +10,7 @@
 
 	<!-- Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:800' rel='stylesheet' type='text/css'>
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="css/normalize.css" />
@@ -33,15 +34,18 @@
 
 	<div ng-controller="MultiplayerGameController" class="game-field">
 		<h2>Play...</h2>
-		<p class="status-bar" ng-if="!isPlayable()">Share this url with your friend: {{ url }}</p>
-		<p class="status-bar" ng-if="isPlayable() && !isMyTurn() && !invalid">Wait for avversary's move!</p>
-		<p class="status-bar" ng-if="isPlayable() && isMyTurn() && !invalid">It is your turn!</p>
-		<div ng-if="!invalid" class="board">
+		<p class="status-bar" ng-if="!isPlayable()">Share this url with a friend:
+			<input onclick="select(this)" id="share-link" type="text" value="{{ url }}">
+		</p>
+		<p class="status-bar" ng-if="invalid">This room is FULL! Please retry later! :(</p>
+		<div ng-if="!invalid && isPlayable()" class="board">
 			<div ng-repeat="col in game.board.columns" ng-click="makeMove($index)" class="column">
 				<div style="background:{{ game.players[coin].color }};" ng-repeat="coin in col track by $index" class="coin">
 				</div>
 			</div>
 		</div>
+		<p class="turn" style="background:{{ game.getCurrentPlayer().color }};" ng-if="!invalid && isPlayable() && !isMyTurn()">Wait for {{ game.getCurrentPlayer().name }}'s move!</p>
+		<p class="turn" style="background:{{ game.getCurrentPlayer().color }};" ng-if="!invalid && isPlayable() && isMyTurn()">It's your turn!</p>
 	</div>
 
 	<div ng-controller="PlaythroughPlayerController" class="game-player">

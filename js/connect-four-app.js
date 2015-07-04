@@ -68,6 +68,9 @@ ConnectionFourApp.Game.prototype.getCurrentPlayer = function() {
 	return this.players[this._round];
 };
 
+ConnectionFourApp.Game.prototype.getCurrentPlayerId = function() {
+	return this._round;
+};
 
 /**
  * Undo last action.

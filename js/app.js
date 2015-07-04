@@ -89,7 +89,7 @@ app.factory('LocalApi', function($timeout, $q) {
 
 
 		setTimeout(function() {
-			deferred.resolve('Hello, ' + name + '!');
+			deferred.resolve('Done!');
 		}, 0);
 
 		return deferred.promise;
@@ -105,7 +105,12 @@ app.factory('LocalApi', function($timeout, $q) {
 
 // app.run(function(WebApi) {});
 
+app.factory('SimpleWebRTC', function() {
+	return SimpleWebRTC;
+});
+
 // Chage LocalApi/WebApi according to your setting
 // Default is LocalApi
 app.controller('GameController', ['$scope', 'LocalApi', 'game', GameController]);
 app.controller('PlaythroughPlayerController', ['$scope', 'LocalApi', PlaythroughPlayerController]);
+app.controller('MultiplayerGameController', ['$scope', 'LocalApi', 'game', '$location', 'SimpleWebRTC', MultiplayerGameController]);

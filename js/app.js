@@ -9,11 +9,11 @@ app.factory('game', function() {
 		players: [
 			// Check out this amazing palette:
 			// http://www.colourlovers.com/palette/3807033/Ripe_as_Summer_Fruit
-			{ name: "Player 1", color: "#FA7F8A" },
-			// { name: "Player 2", color: "#FAAA97" },
-			// { name: "Player 3", color: "#FCD287" },
-			{ name: "Player 4", color: "#FCF887" },
-			// { name: "Player 5", color: "#9FD1A7" },
+			{ name: "RED", color: "#FA7F8A" },
+			// { name: "SALMON", color: "#FAAA97" },
+			// { name: "ORANGE", color: "#FCD287" },
+			{ name: "YELLOW", color: "#FCF887" }
+			// { name: "GREEN", color: "#9FD1A7" },
 		],
 		/**
 		 * The size of the grid.

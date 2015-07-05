@@ -38,8 +38,8 @@ function MultiplayerGameController($scope, Storage, game, $location, SimpleWebRT
 	});
 
 	/**
-	 * Return true if there are enougth player to play the game.
-	 * @return {[type]} [description]
+	 * Return true if there are enougth players to play the game.
+	 * @return {Boolean}
 	 */
 	$scope.isPlayable = function () {
 		return (webrtc.getPeers().length > 0);

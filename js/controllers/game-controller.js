@@ -14,6 +14,7 @@ function GameController($scope, Storage, game) {
 
 		if (game.isEnded()) {
 			// With this move the game reached an "end" state.
+			$scope.$apply();
 
 			if (game.won()) {
 				// Check if player won

@@ -137,6 +137,8 @@ function MultiplayerGameController($scope, Storage, game, $location, SimpleWebRT
 		if (game.isEnded()) {
 			// With this move the game reached an "end" state.
 
+			$scope.$apply();
+
 			if (game.won()) {
 				// Check if player won
 				alert(player.name + " won!");
